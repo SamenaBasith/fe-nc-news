@@ -24,8 +24,8 @@ const ArticleCard = () => {
   }
 
   return (
-    <section className="singleArticle">
-      <h2>{singleArticle.title}</h2>
+    <section className="single-article">
+      <h2 className="single-article-title">{singleArticle.title}</h2>
       <h3>Author: {singleArticle.author}</h3>
       <h4>Topic: {singleArticle.topic}</h4>
       <p>Created on: {singleArticle.created_at.slice(0, 10)}</p>

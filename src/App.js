@@ -5,6 +5,9 @@ import Header from "./components/Header";
 import Articles from "./components/Articles";
 import Nav from "./components/Nav"
 
+import SingleArticle from "./components/SingleArticle";
+
+
 function App() {
   return (
     <BrowserRouter>
@@ -13,6 +16,9 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Articles />} />
+
+          <Route path="/articles/:article_id" element={<SingleArticle />} />
+
           
         </Routes>
       </div>

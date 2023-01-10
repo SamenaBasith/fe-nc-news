@@ -48,9 +48,10 @@ justify-content: space-evenly;
 justify-items: center;
 list-style: none;
 border: 1px solid rgb(63, 61, 61);
-max-width: 500px;
+max-width: 400px;
 min-height: 100px;
-font-family:Verdana, Geneva, Tahoma, sans-serif;
+font-family:'Playfair Display', serif;
+text-transform: uppercase;
 
 
 padding-left: 30px;
@@ -59,7 +60,7 @@ align-items: center;
 align-content: center;
 text-align: center;
 margin: 0 auto;
-background-color: #cec7c7;
+background-image: url("newspaper_background.png");
 padding: 10px;
 font-size: small;
 margin-top: 20px;
@@ -73,7 +74,7 @@ margin-top: 20px;
 
 .sidebar {
   height: 100%;
-  width: 150px;
+  width: 120px;
   position: fixed;
   top: 0;
   left: 0;
@@ -108,7 +109,7 @@ margin-top: 20px;
 }
 
 .single-article {
-border-radius: 30px;
+border-radius: 0px;
 align-items: center;
 align-content: center;
 text-align: center;
@@ -117,7 +118,7 @@ background-color: #c5c0c0;
 padding: 90px;
 font-size: small;
 margin-top: 60px;
-max-width: 500px;
+max-width: 450px;
 min-height: 250px;
 margin-left: 230px;
 text-decoration: none;

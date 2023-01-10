@@ -10,6 +10,7 @@ const Comments = () => {
 
     useEffect(() => {
         setIsLoading(true);
+        
         getComments(article_id)
         .then((comments) => {
             setComments(comments)
@@ -21,10 +22,13 @@ const Comments = () => {
         return <p className="Loading comments">Loading comments...</p>
       }
 
+    
+      
+
     return (
         <section>
             <h2>Comments</h2>
-            <ul classname="comments-list">
+            <ul className="comments-list">
                 {comments.map((comment) => {
                     return (
                         <li key={comment.comment_id} className="comments">

@@ -3,16 +3,21 @@ import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
-    <nav className="nav">
-      <Link to="/Users" className="Users-link">
-        Users
-      </Link>
-      <span> | </span>
-      <Link to="/topics" className="topic-link">
-        Topics
-      </Link>
-    </nav>
-  );
+  <nav className="nav">
+  <Link to="/Users" className="Users-link">
+    Log in
+  </Link>
+
+  
+
+
+  <div className="sidebar">
+    <div>topic 1</div>
+    <div>topic 2</div>
+    <div>topic 3</div>
+  </div>
+</nav>
+);
 };
 
 export default Nav;

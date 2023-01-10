@@ -32,7 +32,7 @@ const SingleArticle = () => {
       <p>Created on: {singleArticle.created_at.slice(0, 10)}</p>
       <p>{singleArticle.body}</p>
       <ArticleVotes votes={singleArticle.votes} article_id={singleArticle.article_id}/>
-      <Comments/>
+      <Comments singleArticle={singleArticle} />
     </section>
     
  

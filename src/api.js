@@ -36,3 +36,5 @@ export const getSingleArticle = (article_id) => {
 
     })
   }
+
+  

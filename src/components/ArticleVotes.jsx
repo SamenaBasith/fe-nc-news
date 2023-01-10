@@ -26,7 +26,7 @@ const ArticleVotes = ({article_id, votes}) => {
     return (
         <section> 
             <button onClick={() => {incVote(1)}}>{votesChange + votes}👍
-            <span aria-label="likes for this comment"></span>
+            <span aria-label="likes for this article"></span>
             </button>
             <button onClick={() => {incVote(-1)}}>👎
             <span aria-label="dislikes for this article"></span>

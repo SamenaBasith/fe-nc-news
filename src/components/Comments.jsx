@@ -5,15 +5,21 @@ import { getComments } from '../api';
 
 const Comments = () => {
     const [comments, setComments] = useState([])
+    const [isLoading, setIsLoading] = useState(true);
     const { article_id } = useParams();
 
     useEffect(() => {
+        setIsLoading(true);
         getComments(article_id)
         .then((comments) => {
-            console.log(comments)
             setComments(comments)
+            setIsLoading(false);
         })
     }, [article_id]);
+
+    if (isLoading) {
+        return <p className="Loading comments">Loading comments...</p>
+      }
 
     return (
         <section>

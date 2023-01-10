@@ -33,9 +33,7 @@ return (
                     </Link>
                   </h2>
                   <div className="article-info">
-                    <p>Created on: {article.created_at.slice(0, 10)}</p>
-                    <p>Topic: {article.topic}</p>
-                    <p>Author: {article.author}</p>
+                    <h3>Author: {article.author}</h3>
                     <p>Votes: {article.votes}</p>
                     <p>Comment count: {article.comment_count}</p>
                   </div>

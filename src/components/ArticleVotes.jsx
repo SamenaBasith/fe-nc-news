@@ -25,10 +25,10 @@ const ArticleVotes = ({article_id, votes}) => {
         } else {
     return (
         <section> 
-            <button onClick={() => {incVote(1)}}>{votesChange + votes}👍
+            <button className="article-vote-button" onClick={() => {incVote(1)}}>{votesChange + votes}👍
             <span aria-label="likes for this article"></span>
             </button>
-            <button onClick={() => {incVote(-1)}}>👎
+            <button className="article-vote-button" onClick={() => {incVote(-1)}}>👎
             <span aria-label="dislikes for this article"></span>
             </button>
         </section>

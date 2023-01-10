@@ -25,15 +25,22 @@ const SingleArticle = () => {
   }
 
   return (
+    <body>
     <section className="single-article">
       <h2 className="single-article-title">{singleArticle.title}</h2>
-      <h3>Author: {singleArticle.author}</h3>
+      <h3 className="single-article-author">Author: {singleArticle.author}</h3>
       <h4>Topic: {singleArticle.topic}</h4>
       <p>Created on: {singleArticle.created_at.slice(0, 10)}</p>
-      <p>{singleArticle.body}</p>
+      <p className="single-article-body">{singleArticle.body}</p>
       <ArticleVotes votes={singleArticle.votes} article_id={singleArticle.article_id}/>
-      <Comments singleArticle={singleArticle} />
-    </section>
+      </section>
+      <article 
+      className="comment-section"><Comments singleArticle={singleArticle} 
+      /></article>
+
+    </body>
+  
+
     
  
   );

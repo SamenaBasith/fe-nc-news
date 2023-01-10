@@ -8,10 +8,8 @@
   pointer-events: none;
 }
 
-
-
 .App-header {
-  background-color: hwb(218 57% 35%);
+  background-color: hwb(220 64% 32%);
   min-height: 4vh;
   display: flex;
   flex-direction: column;
@@ -28,7 +26,7 @@
 }
 
 .title {
-  color: rgb(87, 83, 83);
+  color: rgb(42, 39, 39);
   margin-bottom: 0;
   text-decoration: none;
   font-family: 'Playfair Display', serif;
@@ -48,11 +46,13 @@ justify-content: space-around;
 justify-content: space-evenly;
 justify-items: center;
 list-style: none;
-border: 1px solid rgb(63, 61, 61);
+border: 1px solid rgb(220, 219, 219);
 max-width: 400px;
-min-height: 100px;
+max-height: 300px;
 font-family:'Playfair Display', serif;
-text-transform: uppercase;
+line-height: 20%;
+color: ghostwhite;
+
 
 
 padding-left: 30px;
@@ -61,10 +61,19 @@ align-items: center;
 align-content: center;
 text-align: center;
 margin: 0 auto;
-background-image: url("newspaper_background.png");
+background-color: rgb(43, 42, 42);
 padding: 10px;
 font-size: small;
 margin-top: 20px;
+}
+
+.article-card-title {
+
+  line-height: 100%;
+  text-decoration: none;
+  color: ghostwhite;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 25px;
 }
 
 .article-info {
@@ -75,12 +84,12 @@ margin-top: 20px;
 
 .sidebar {
   height: 100%;
-  width: 120px;
+  width: 150px;
   position: fixed;
   top: 0;
   left: 0;
   padding-top: 40px;
-  background-color: rgb(143, 160, 162);
+  background-color: rgb(31, 32, 34);
   
   }
   
@@ -89,6 +98,7 @@ margin-top: 20px;
   padding: 8px;
   font-size: 20px;
   display: block;
+  color: whitesmoke
   }
 
 
@@ -126,15 +136,9 @@ text-decoration: none;
 
 }
 
-.single-article-title {
-  margin-top: 0px;
-  margin-bottom: 50px;
-  font-family: 'Playfair Display', serif;
-  font-size: 30px;
-}
 
-.comments{
-  display: flex;
+.comments {
+display: flex;
 flex-wrap: wrap;
 justify-content: space-around;
 justify-content: space-evenly;
@@ -145,9 +149,6 @@ max-width: 400px;
 min-height: 100px;
 font-family:'Playfair Display', serif;
 background-color: lightgrey;
-
-
-
 padding-left: 30px;
 border-radius: 5px;
 align-items: center;
@@ -155,9 +156,87 @@ align-content: center;
 text-align: center;
 margin: 0 auto;
 padding: 10px;
-font-size: xsmall;
+font-size: small;
 margin-top: 20px;
+}
 
+.article-vote-button {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-right: 10px;
+  border-radius: 8px;
+  border: 2px solid rgb(133, 146, 164);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  width: 15%;
+}
+
+.article-vote-button:hover {
+  background-color: #626f81;
+  color: white;
+}
+
+.article-vote-button:active {
+  background-color: #696b6d;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.single-article-body {
+  font-size: medium;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.single-article-author {
+  margin-bottom: 0px;
+  font-style: italic;
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ 
+}
+
+.single-article-title {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+}
+
+.under-header-text{
+    animation-duration: 8s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+}
+
+@keyframes slidein {
+  0% {
+    margin-left: 0%;
+  }
+  50% {
+    margin-left: 300px;
+  }
+  100% {
+    margin-left: 0%;
+  }
+}
+
+.Loading {
+  border: 16px solid #f3f3f3; 
+  border-top: 20px solid #3498db;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 2s linear infinite;
+  text-align: center;
+  left: 50%;
+position: absolute;
+text-align: center;
+top: 50%;
+
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); };
 }
 
 

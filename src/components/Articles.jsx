@@ -28,7 +28,8 @@ return (
             return (
                 <li className="article_card" key={article.article_id}>
                      <h2>
-                    <Link to={`/articles/${article.article_id}`}>
+                    <Link className="article-card-title"
+                    to={`/articles/${article.article_id}`}>
                       {article.title}
                     </Link>
                   </h2>

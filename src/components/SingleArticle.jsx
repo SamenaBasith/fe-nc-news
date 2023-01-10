@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getSingleArticle
- } from "../api";
+import { getSingleArticle } from "../api";
 
-const ArticleCard = () => {
+const SingleArticle = () => {
   const [singleArticle, setSingleArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -13,7 +12,6 @@ const ArticleCard = () => {
     setIsLoading(true);
     getSingleArticle(article_id)
     .then((article) => {
-        console.log(article)
       setSingleArticle(article);
       setIsLoading(false);
     });
@@ -34,4 +32,4 @@ const ArticleCard = () => {
   );
 };
 
-export default ArticleCard;
+export default SingleArticle;

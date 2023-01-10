@@ -5,15 +5,12 @@ const Nav = () => {
   return (
     <nav className="nav">
       <Link to="/Users" className="Users-link">
-        Log in
+        Users
       </Link>
-   
-
-      <div className="sidebar">
-        <div>topic 1</div>
-        <div>topic 2</div>
-        <div>topic 3</div>
-      </div>
+      <span> | </span>
+      <Link to="/topics" className="topic-link">
+        Topics
+      </Link>
     </nav>
   );
 };

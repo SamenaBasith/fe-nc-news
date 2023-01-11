@@ -37,4 +37,15 @@ export const getSingleArticle = (article_id) => {
     })
   }
 
+  export const postComment = (newComment, article_id) => {
+    const postBody = {
+        username: newComment.author,
+        body: newComment.body,
+    }
+    return newsApi.post(`/articles/${article_id}/comments`, postBody)
+    .then((res) => {
+        return res.data.comment
+    }
+    )
+}
   

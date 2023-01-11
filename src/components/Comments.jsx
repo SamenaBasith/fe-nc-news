@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getComments } from "../api";
+import CommentAdder from "./CommentAdder";
 
 
 const Comments = ({ singleArticle }) => {
@@ -42,10 +43,12 @@ const Comments = ({ singleArticle }) => {
         <p> oops! something went wrong </p>
     )
   } else {
+ 
 
     return (
       <section>
         <h2>Comments</h2>
+        <CommentAdder setComments={setComments} />
         <ul className="comments-list">
           {comments.map((comment) => {
             return (

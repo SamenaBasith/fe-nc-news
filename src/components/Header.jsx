@@ -7,7 +7,7 @@ const Header = () => {
          <Link to="/" className="Header_link">
         <h1 className="title">NC News </h1>
         </Link>
-        <p>Everything you need to know all in one place!</p>
+        <p className="under-header-text">Everything you need to know all in one place!</p>
       </header>
 
     );

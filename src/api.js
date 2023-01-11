@@ -24,3 +24,17 @@ export const getSingleArticle = (article_id) => {
       return res.data.comments;
     });
   };
+
+
+  export const patchArticleById = (article_id, increment) => {
+    const patchedBody = {
+        inc_votes: increment,
+    }
+    return newsApi.patch(`/articles/${article_id}`, patchedBody)
+    .then((res) => {
+        return res.data.article
+
+    })
+  }
+
+  

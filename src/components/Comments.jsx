@@ -6,7 +6,7 @@ import { getComments } from "../api";
 const Comments = ({ singleArticle }) => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
+  const [isError, setIsError] = useState(null);
   const { article_id } = useParams();
 
   useEffect(() => {
@@ -14,18 +14,21 @@ const Comments = ({ singleArticle }) => {
     getComments(article_id)
       .then((comments) => {
         setComments(comments);
-        setIsError(false);
         setIsLoading(false);
       })
-      .catch(() => {
-        setIsError(true);
+      .catch((err) => {
+        setIsError(err.response.data.msg);
+        setIsLoading(false);
+        setTimeout(() => {
+            setIsError(null)
+        }, 3000);
       });
   }, [article_id]);
 
 
 
   if (isLoading) {
-    return <p className="Loading comments">Loading comments...</p>;
+    return <p className="Loading comments"> Loading comments...</p>;
   }
 
   if (singleArticle.comment_count === "0") {

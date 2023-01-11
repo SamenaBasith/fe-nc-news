@@ -21,7 +21,7 @@ const SingleArticle = () => {
   }, [article_id]);
 
   if (isLoading) {
-    return <p className="Loading">Loading...</p>
+    return <p className="Loading"> Loading...</p>
   }
 
   return (

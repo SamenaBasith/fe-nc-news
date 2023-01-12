@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getComments } from "../api";
+import CommentAdder from "./CommentAdder";
 
 
 const Comments = ({ singleArticle }) => {
@@ -42,16 +43,18 @@ const Comments = ({ singleArticle }) => {
         <p> oops! something went wrong </p>
     )
   } else {
+ 
 
     return (
       <section>
         <h2>Comments</h2>
+        <CommentAdder setComments={setComments} />
         <ul className="comments-list">
           {comments.map((comment) => {
             return (
               <li key={comment.comment_id} className="comments">
                 <h4>
-                  User: {comment.author} | {comment.created_at.slice(0, 10)}
+                  Username: {comment.author} | {comment.created_at.slice(0, 10)}
                 </h4>
                 <p>{comment.body}</p>
                 <button>

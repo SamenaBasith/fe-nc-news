@@ -5,6 +5,7 @@ import ArticleVotes from "./ArticleVotes";
 import Comments from "./Comments";
 
 
+
 const SingleArticle = () => {
   const [singleArticle, setSingleArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -25,7 +26,7 @@ const SingleArticle = () => {
   }
 
   return (
-    <body>
+    <main>
     <section className="single-article">
       <h2 className="single-article-title">{singleArticle.title}</h2>
       <h3 className="single-article-author">Author: {singleArticle.author}</h3>
@@ -38,7 +39,7 @@ const SingleArticle = () => {
       className="comment-section"><Comments singleArticle={singleArticle} 
       /></article>
 
-    </body>
+    </main>
   
 
     

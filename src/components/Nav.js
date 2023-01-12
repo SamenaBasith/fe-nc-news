@@ -1,5 +1,6 @@
 // import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Topics from "./Topics";
 
 const Nav = () => {
   return (
@@ -7,15 +8,8 @@ const Nav = () => {
   <Link to="/Users" className="Users-link">
     Log in
   </Link>
-  
-
-  
-
-
   <div className="sidebar">
-    <div>topic 1</div>
-    <div>topic 2</div>
-    <div>topic 3</div>
+    <Topics/>
   </div>
 </nav>
 );

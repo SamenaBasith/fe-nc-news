@@ -1,21 +1,22 @@
 import { useState, useEffect } from "react";
 import { getArticles } from "../api";
-import { Link} from "react-router-dom";
+import { Link, useParams} from "react-router-dom";
 
 const Articles = () => {
 
     const [articles, setArticles] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const { topic } = useParams()
 
 
 useEffect(() => {
     setIsLoading(true)
-    getArticles()
+    getArticles(topic)
     .then((articles) => {
         setArticles(articles)
         setIsLoading(false)
     })
-}, []);
+}, [topic]);
     
 if (isLoading) {
     return <p className="Loading">Loading...</p>;

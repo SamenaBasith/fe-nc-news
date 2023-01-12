@@ -1,6 +1,9 @@
 
 .App {
   text-align: center;
+  max-width: 100%;
+  min-width: 730px;
+  max-height: 100%;
 }
 
 .App-logo {
@@ -217,7 +220,6 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
   padding: 10px;
   
   
-  
 }
 
 
@@ -307,3 +309,17 @@ top: 50%;
 
 
 
+.single-topic-sidebar {
+  color: whitesmoke;
+  font-size: large;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  line-height: 100px;
+  
+}
+
+.topics-list {
+  list-style: none;
+  margin-top: 70%
+}

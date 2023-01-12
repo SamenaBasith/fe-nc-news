@@ -67,7 +67,7 @@ const CommentAdder = ({setComments}) => {
         <form className="comment-adder" onSubmit={handleSubmit}>
         <label htmlFor="newComment"></label>
         <textarea
-        className="comment-box"
+        className="post-comment-box"
         placeholder="Type your comment here..."
         id="newComment"
         value={newCommentBody}
@@ -76,8 +76,8 @@ const CommentAdder = ({setComments}) => {
         <button className="post-comment-button" type="submit"> Post </button>
         <button 
         className="clear-button"
-        type="clear-button"
-        onClick={() => {setNewCommentBody("");}}
+        type="button"
+        onClick={() => {setNewCommentBody("")}}
         > Clear
         </button>
         </form>

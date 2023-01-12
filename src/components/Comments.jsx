@@ -54,7 +54,7 @@ const Comments = ({ singleArticle }) => {
             return (
               <li key={comment.comment_id} className="comments">
                 <h4>
-                  User: {comment.author} | {comment.created_at.slice(0, 10)}
+                  Username: {comment.author} | {comment.created_at.slice(0, 10)}
                 </h4>
                 <p>{comment.body}</p>
                 <button>

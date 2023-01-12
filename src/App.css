@@ -141,8 +141,6 @@ text-decoration: none;
 
 
 .comments {
-display: flex;
-flex-wrap: wrap;
 justify-content: space-around;
 justify-content: space-evenly;
 justify-items: center;
@@ -161,7 +159,9 @@ margin: 0 auto;
 padding: 10px;
 font-size: small;
 margin-top: 20px;
+
 }
+
 
 
 
@@ -183,8 +183,8 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px
- 
+  font-size: 16px;
+
 }
 
 .clear-button {
@@ -206,7 +206,7 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 
 }
 
-.comment-box {
+.post-comment-box {
   height: 50px;
   padding: 10px;
   background-color: #d0d6e3;
@@ -215,7 +215,8 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
   border: 1px solid rgb(19, 29, 19);
   padding: 10px;
   
-
+  
+  
 }
 
 
@@ -226,7 +227,6 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
   border-radius: 8px;
   border: 2px solid rgb(133, 146, 164);
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  width: 15%;
 }
 
 .article-vote-button:hover {
@@ -296,6 +296,11 @@ top: 50%;
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); };
+}
+
+.success{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  border: #4CAF50;
 }
 
 

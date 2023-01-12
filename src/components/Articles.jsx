@@ -7,6 +7,8 @@ const Articles = () => {
     const [articles, setArticles] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const { topic } = useParams()
+    
+
 
 
 useEffect(() => {
@@ -23,7 +25,7 @@ if (isLoading) {
 }
 
 return (
-    <div>
+    <div className="article-container">
     <ul className="articles">
         {articles.map((article) => {
             return (

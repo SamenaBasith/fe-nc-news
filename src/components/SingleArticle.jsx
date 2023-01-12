@@ -26,7 +26,7 @@ const SingleArticle = () => {
   }
 
   return (
-    <main>
+    <main className="single-article-container">
     <section className="single-article">
       <h2 className="single-article-title">{singleArticle.title}</h2>
       <h3 className="single-article-author">Author: {singleArticle.author}</h3>

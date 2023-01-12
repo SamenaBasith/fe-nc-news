@@ -40,8 +40,7 @@
 }
 
 .article_card {
-display: flex;
-flex-wrap: wrap;
+
 justify-content: space-around;
 justify-content: space-evenly;
 justify-items: center;
@@ -50,7 +49,7 @@ border: 1px solid rgb(220, 219, 219);
 max-width: 400px;
 max-height: 300px;
 font-family:'Playfair Display', serif;
-line-height: 20%;
+line-height: 40%;
 color: ghostwhite;
 
 
@@ -74,12 +73,14 @@ margin-top: 20px;
   color: ghostwhite;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 25px;
+
 }
 
 .article-info {
   font-size: medium;
   font-family: sans-serif;
   font-style: italic;
+ 
 }
 
 .sidebar {

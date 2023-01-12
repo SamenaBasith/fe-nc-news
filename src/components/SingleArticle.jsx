@@ -9,6 +9,7 @@ import Comments from "./Comments";
 const SingleArticle = () => {
   const [singleArticle, setSingleArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(null)
 
   const { article_id } = useParams();
 
@@ -18,8 +19,16 @@ const SingleArticle = () => {
     .then((article) => {
       setSingleArticle(article);
       setIsLoading(false);
-    });
+    })
+    .catch((err) => {
+      setIsError(err.response.data.msg)
+      setIsLoading(false)
+   })
   }, [article_id]);
+
+  if(isError) {
+    return <p>{isError}</p>   
+}
 
   if (isLoading) {
     return <p className="Loading"> Loading...</p>

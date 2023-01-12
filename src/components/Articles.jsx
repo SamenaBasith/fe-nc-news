@@ -6,23 +6,33 @@ const Articles = () => {
 
     const [articles, setArticles] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [isError, setIsError] = useState(null)
     const { topic } = useParams()
     
 
-
-
 useEffect(() => {
+    setIsError(false)
     setIsLoading(true)
     getArticles(topic)
     .then((articles) => {
         setArticles(articles)
         setIsLoading(false)
     })
+    .catch((err) => {
+       setIsError(err.response.data.msg)
+       setIsLoading(false)
+    })
 }, [topic]);
+
+if(isError) {
+    return <p>{isError}</p>   
+}
     
 if (isLoading) {
     return <p className="Loading">Loading...</p>;
 }
+
+
 
 return (
     <div className="article-container">

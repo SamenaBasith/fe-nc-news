@@ -1,7 +1,14 @@
 
 .App {
   text-align: center;
+  max-width: 100%;
+  min-width: 360px;
+  max-height: 100%;
+
+  
 }
+
+
 
 .App-logo {
   height: 40vmin;
@@ -66,6 +73,8 @@ font-size: small;
 margin-top: 20px;
 }
 
+
+
 .article-card-title {
 
   line-height: 100%;
@@ -85,13 +94,23 @@ margin-top: 20px;
 
 .sidebar {
   height: 100%;
-  width: 150px;
+  min-width: 100px;
+  max-width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   padding-top: 40px;
   background-color: rgb(31, 32, 34);
+
   
+  }
+  
+  @media (max-width:295px) {
+    .sidebar {
+      width: 100%;
+      max-width: 900px;
+      margin-bottom: 0
+    }
   }
   
   
@@ -126,15 +145,12 @@ align-items: center;
 align-content: center;
 text-align: center;
 margin: 0 auto;
-background-color: #c5c0c0;
 padding: 90px;
 font-size: small;
 margin-top: 60px;
 max-width: 500px;
-min-height: 250px;
-margin-left: 230px;
 text-decoration: none;
-
+background-color: #aaacae;
 
 }
 
@@ -215,7 +231,6 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
   width: 30%;
   border: 1px solid rgb(19, 29, 19);
   padding: 10px;
-  
   
   
 }
@@ -302,6 +317,42 @@ top: 50%;
 .success{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   border: #4CAF50;
+}
+
+
+
+
+.single-topic-sidebar {
+  color: whitesmoke;
+  font-size: large;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  line-height: 100px;
+  
+}
+
+.topics-list {
+  list-style: none;
+  margin-top: 70%
+}
+
+@media screen and (max-width: 600px) {
+  .article-container{
+    padding-left: 7rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .App-header {
+    padding-left: 7rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .single-article-container {
+    padding-left: 7rem;
+  }
 }
 
 

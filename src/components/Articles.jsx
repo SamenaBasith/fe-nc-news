@@ -1,28 +1,41 @@
 import { useState, useEffect } from "react";
 import { getArticles } from "../api";
-import { Link} from "react-router-dom";
+import { Link, useParams} from "react-router-dom";
 
 const Articles = () => {
 
     const [articles, setArticles] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-
+    const [isError, setIsError] = useState(null)
+    const { topic } = useParams()
+    
 
 useEffect(() => {
+    setIsError(false)
     setIsLoading(true)
-    getArticles()
+    getArticles(topic)
     .then((articles) => {
         setArticles(articles)
         setIsLoading(false)
     })
-}, []);
+    .catch((err) => {
+       setIsError(err.response.data.msg)
+       setIsLoading(false)
+    })
+}, [topic]);
+
+if(isError) {
+    return <p>{isError}</p>   
+}
     
 if (isLoading) {
     return <p className="Loading">Loading...</p>;
 }
 
+
+
 return (
-    <div>
+    <div className="article-container">
     <ul className="articles">
         {articles.map((article) => {
             return (

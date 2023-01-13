@@ -29,7 +29,7 @@ const Comments = ({ singleArticle }) => {
 
 
   if (isLoading) {
-    return <p className="Loading comments"> Loading comments...</p>;
+    return <p className="Loading"> Loading comments...</p>;
   }
 
   if (singleArticle.comment_count === "0") {
@@ -46,7 +46,7 @@ const Comments = ({ singleArticle }) => {
  
 
     return (
-      <section>
+      <section className="comments-container">
         <h2>Comments</h2>
         <CommentAdder setComments={setComments} />
         <ul className="comments-list">

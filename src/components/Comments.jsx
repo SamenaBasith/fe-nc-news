@@ -62,7 +62,7 @@ const Comments = ({ singleArticle }) => {
                   {comment.votes}
                   <span aria-label="votes for this comment">👍</span>
                 </button>
-                <DeleteComment comment_id={comment.comment_id} setComments={setComments}/>
+                <DeleteComment comment_id={comment.comment_id} />
               </li>
             );
           })}

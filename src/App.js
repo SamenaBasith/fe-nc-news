@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Articles from "./components/Articles";
 import Nav from "./components/Nav"
 import SingleArticle from "./components/SingleArticle";
+import { Error } from './components/Error';
 
 
 
@@ -17,6 +18,7 @@ function App() {
         <Header className="App-header" />
         <Nav />
         <Routes>
+          <Route path='/*' element={<Error />} />
           <Route path="/" element={<Articles />} />
           <Route path="/articles/:article_id" element={<SingleArticle />} />
           <Route path="/topics/:topic" element={<Articles />} />

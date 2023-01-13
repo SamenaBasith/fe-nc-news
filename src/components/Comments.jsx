@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getComments } from "../api";
 import CommentAdder from "./CommentAdder";
+import DeleteComment from './DeleteComment'
 
 
 const Comments = ({ singleArticle }) => {
@@ -61,6 +62,7 @@ const Comments = ({ singleArticle }) => {
                   {comment.votes}
                   <span aria-label="votes for this comment">👍</span>
                 </button>
+                <DeleteComment comment_id={comment.comment_id} />
               </li>
             );
           })}

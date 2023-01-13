@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { getArticles } from "../api";
-import { Link, useParams} from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 
 const Articles = () => {
 
@@ -8,12 +8,26 @@ const Articles = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(null)
     const { topic } = useParams()
-    
+
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    const sortbyQuery = searchParams.get("sortbyQuery");
+    const orderbyQuery = searchParams.get("orderbyQuery");
+
+  
+    const handleSortBy = (e) => {
+        setSearchParams({sortbyQuery: e.target.value})
+       }
+   
+   const handleOrderBy = (e) => {
+    setSearchParams({sortbyQuery, orderbyQuery : e.target.value})
+       }
+
 
 useEffect(() => {
     setIsError(false)
     setIsLoading(true)
-    getArticles(topic)
+    getArticles(topic, sortbyQuery, orderbyQuery)
     .then((articles) => {
         setArticles(articles)
         setIsLoading(false)
@@ -22,7 +36,7 @@ useEffect(() => {
        setIsError(err.response.data.msg)
        setIsLoading(false)
     })
-}, [topic]);
+}, [topic, sortbyQuery, orderbyQuery ]);
 
 if(isError) {
     return <p>{isError}</p>   
@@ -35,7 +49,21 @@ if (isLoading) {
 
 
 return (
-    <div className="article-container">
+    <main className="article-container">
+        <section>
+            <label>Sort By: </label>
+            <select value={sortbyQuery} onChange={handleSortBy}>
+                <option value="created_at"> Date </option>
+                <option value="comment_count"> Comment Count </option>
+                <option value="votes"> Most Popular </option>
+            </select>
+            <select value={orderbyQuery} onChange={handleOrderBy}>
+            <option value="desc"> Descending </option>
+                <option value="asc"> Ascending </option>
+                
+
+            </select>
+        </section>
     <ul className="articles">
         {articles.map((article) => {
             return (
@@ -57,7 +85,7 @@ return (
             )}
         )}
     </ul>
-    </div>
+    </main>
 
 )
 }

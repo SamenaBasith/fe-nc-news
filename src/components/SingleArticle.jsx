@@ -16,8 +16,8 @@ const SingleArticle = () => {
   useEffect(() => {
     setIsLoading(true);
     getSingleArticle(article_id)
-    .then((article) => {
-      setSingleArticle(article);
+    .then((articleFromApi) => {
+      setSingleArticle(articleFromApi);
       setIsLoading(false);
     })
     .catch((err) => {

@@ -14,8 +14,8 @@ const Comments = ({ singleArticle }) => {
   useEffect(() => {
     setIsLoading(true);
     getComments(article_id)
-      .then((comments) => {
-        setComments(comments);
+      .then((commentsFromApi) => {
+        setComments(commentsFromApi);
         setIsLoading(false);
       })
       .catch((err) => {
@@ -62,7 +62,7 @@ const Comments = ({ singleArticle }) => {
                   {comment.votes}
                   <span aria-label="votes for this comment">👍</span>
                 </button>
-                <DeleteComment comment_id={comment.comment_id} />
+                <DeleteComment comment_id={comment.comment_id} author={comment.author} />
               </li>
             );
           })}

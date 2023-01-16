@@ -1,11 +1,15 @@
 import { deleteComment } from '../api'
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { UserContext } from "../userContext"
 
-const DeleteComment = ({comment_id}) => {
+const DeleteComment = ({comment_id, author}) => {
 
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(null);
     const [isSuccess, setIsSuccess] = useState(null);
+
+    const { user, isLoggedIn } = useContext(UserContext)
+
 
     const handleClick = (comment_id) => {
         setIsLoading(true)
@@ -21,6 +25,8 @@ const DeleteComment = ({comment_id}) => {
           });
       };
 
+
+
       if (isError) {
         return <p className="error"> {isError} </p>;
       }
@@ -28,20 +34,20 @@ const DeleteComment = ({comment_id}) => {
         return <p className="success"> Your comment has been deleted </p>
       }
 
-if (isLoading) {
-    return <p className="Loading"> Deleting comment...</p>;
-  }
+      if (isLoading) {
+          return <p className="Loading"> Deleting comment...</p>;
+      }
 
-  return (
-    <main>
-      <button
-      onClick={(e) => {
-        handleClick(comment_id)
-      }}> Delete
-      </button>
-      
-    </main>
-    )
+
+
+  if (isLoggedIn && user.username === author){
+    if (comment_id){
+        return (
+        <button 
+        className="deleteComment" 
+        onClick={handleClick}>Delete</button>)
+    }
+  }
       }
 
     

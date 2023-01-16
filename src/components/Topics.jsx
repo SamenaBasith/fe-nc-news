@@ -7,8 +7,8 @@ const Topics = () => {
 
 
   useEffect(() => {
-    getTopics().then((topic) => {
-      setTopics(topic);
+    getTopics().then((topicsFromApi) => {
+      setTopics(topicsFromApi);
     })
   }, []);
 

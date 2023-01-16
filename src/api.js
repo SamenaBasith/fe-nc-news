@@ -5,7 +5,6 @@ const newsApi = axios.create({
 });
 
 export const getArticles = (topic, sort_by, order_by) => {
- console.log(sort_by, order_by)
  if (sort_by === null) {
   sort_by = "created_at"
  }
@@ -55,4 +54,10 @@ export const getTopics = () => {
 
 export const deleteComment = (comment_id) => {
   return newsApi.delete(`/comments/${comment_id}`)
+}
+
+export const getUsers = () => {
+  return newsApi.get('/users').then((res) => {
+      return res.data.users
+  })
 }

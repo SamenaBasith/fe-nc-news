@@ -28,8 +28,8 @@ useEffect(() => {
     setIsError(false)
     setIsLoading(true)
     getArticles(topic, sortbyQuery, orderbyQuery)
-    .then((articles) => {
-        setArticles(articles)
+    .then((articlesFromApi) => {
+        setArticles(articlesFromApi)
         setIsLoading(false)
     })
     .catch((err) => {

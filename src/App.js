@@ -6,6 +6,7 @@ import Articles from "./components/Articles";
 import Nav from "./components/Nav"
 import SingleArticle from "./components/SingleArticle";
 import { Error } from './components/Error';
+import Users from "./components/Users"
 
 
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/" element={<Articles />} />
           <Route path="/articles/:article_id" element={<SingleArticle />} />
           <Route path="/topics/:topic" element={<Articles />} />
+          <Route path="/users" element={<Users />} />
         </Routes>
       </div>
     </BrowserRouter>

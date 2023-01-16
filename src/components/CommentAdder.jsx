@@ -9,7 +9,7 @@ const CommentAdder = ({setComments}) => {
     const [isSuccess, setIsSuccess] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const { article_id } = useParams()
-    const username = "grumpy19"
+    const username = "tickle122"
 
 
     const handleSubmit = (event) => {
